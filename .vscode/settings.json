@@ -1,0 +1,23 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#08cf3b",
+        "activityBar.background": "#08cf3b",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#7447f8",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#08cf3b",
+        "statusBar.background": "#069e2d",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#08cf3b",
+        "statusBarItem.remoteBackground": "#069e2d",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#069e2d",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#069e2d99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#069E2D",
+    "liveServer.settings.multiRootWorkspaceName": "Programación básica"
+}
