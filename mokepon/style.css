@@ -5,7 +5,8 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
-    background-color: #041562;
+    background: #0d1e73;
+    background: linear-gradient(300deg,rgba(13, 30, 115, 1) 0%, rgba(199, 87, 186, 1) 48%, rgba(115, 9, 25, 1) 100%);
 }
 
 #seleccionar-mascota {
@@ -97,4 +98,10 @@ input {
     border: transparent;
     color: #2b12e4;
     background: transparent;
+}
+
+.ataques {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    text-align: center;
 }
