@@ -77,6 +77,24 @@ input {
     box-sizing: border-box;
     border-radius: 20px;
     border-color: transparent;
-    width: 100px;
+    width: 200px;
     color: white;
+}
+
+#mensajes {
+    width: 280px;
+    background: teal;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center ;
+    flex-direction: column;
+}
+
+#boton-reiniciar {
+    font-family: "Poppins", sans-serif;
+    border: transparent;
+    color: #2b12e4;
+    background: transparent;
 }

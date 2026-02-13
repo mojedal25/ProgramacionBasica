@@ -20,7 +20,7 @@ function iniciarJuego() {
     let botonTierra = document.getElementById('boton-tierra')
     botonTierra.addEventListener('click', ataqueTierra)
 
-    let botonReiniciar = document.getElementById('boton-reniciar')
+    let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
@@ -142,32 +142,28 @@ function crearMensaje(resultado) {
     let ataqueDelJugador = document.getElementById('ataque-del-jugador')
     let ataqueDelEnemigo = document.getElementById('ataque-del-enemigo')
 
-    let notificacion = document.createElement('p')
+    
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
-    notificacion.innerHTML = resultado
+    sectionMensajes.innerHTML = resultado
     nuevoAtaqueDelJugador.innerHTML = ataqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
 
     // let parrafo = document.createElement('p')
     // parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ', las mascotas del enemigo ataco con ' + ataqueEnemigo + '-' + resultado
-
-    sectionMensajes.appendChild(notificacion)
+    
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataqueDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 function crearMensajeFinal(resultadoFinal) {
-    let sectionMensajes = document.getElementById('mensajes')
+    let sectionMensajes = document.getElementById('resultado')
 
     let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'block'
-
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = resultadoFinal
-
-    sectionMensajes.appendChild(parrafo)
+    
+    sectionMensajes.innerHTML = resultadoFinal      
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
