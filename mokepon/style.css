@@ -29,7 +29,7 @@ body {
     font-size: 32px;
 }
 
-.tarjetas {
+.tarjetas, .tarjetas-ataques {
     display: flex;
     gap: 10px;
 }
@@ -63,7 +63,11 @@ body {
 }
 
 input {
-    display: none;
+    display: none; 
+}
+
+input:checked + label {
+    background: #5D8BF4;
 }
 
 #seleccionar-ataque {
@@ -103,5 +107,22 @@ input {
 .ataques {
     display: grid;
     grid-template-columns: 100px 100px;
-    text-align: center;
+    color: white;
+}
+
+#vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.ataques-jugador, .ataques-enemigo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(max-width: 360px) {
+    .tarjetas, .tarjetas-ataques {
+        flex-direction: column;
+    }
 }
