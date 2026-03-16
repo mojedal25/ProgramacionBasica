@@ -19,5 +19,8 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#069E2D",
-    "liveServer.settings.multiRootWorkspaceName": "Programación básica"
+    "liveServer.settings.multiRootWorkspaceName": "Programación básica",
+    "cSpell.ignoreWords": [
+        "MOKEPON"
+    ]
 }

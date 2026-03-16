@@ -27,7 +27,7 @@ let inputCapipepo
 let inputRatigueya
 let mascotaJugador
 let ataquesMokepon
-let ateaquesMokeponEnemigo
+let ataquesMokeponEnemigo
 let botonFuego
 let botonAgua 
 let botonTierra 
@@ -186,7 +186,7 @@ function seleccionarMascotaEnemigo() {
     let mascotaAleatorio = aleatorio(0, mokepones.length -1)    
 
     spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatorio].nombre
-    ateaquesMokeponEnemigo = mokepones[mascotaAleatorio].ataque
+    ataquesMokeponEnemigo = mokepones[mascotaAleatorio].ataque
     secuenciaAtaque()
 }
 
@@ -206,7 +206,7 @@ function ataqueTierra() {
 } */
 
 function ataqueAleatorioEnemigo() {
-   let ataqueAleatorio = aleatorio(0,ataqueAleatorioEnemigo.length -1)
+   let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
 
    if(ataqueAleatorio == 0 || ataqueAleatorio == 1){
     ataqueEnemigo.push('FUEGO')
