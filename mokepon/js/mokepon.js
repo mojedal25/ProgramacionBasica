@@ -25,6 +25,7 @@ let opcionDeMokepones
 let inputHipodoge 
 let inputCapipepo 
 let inputRatigueya
+let inputArdiguella
 let mascotaJugador
 let ataquesMokepon
 let ataquesMokeponEnemigo
@@ -54,6 +55,8 @@ let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attac
 
 let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
+let ardiguella = new Mokepon('Ardiguella', './assets/ardilla.png', 5)
+
 
 hipodoge.ataque.push(
     { nombre: '💧', id: 'boton-agua'},
@@ -79,7 +82,14 @@ ratigueya.ataque.push(
     { nombre: '🌱', id: 'boton-tierra'},
 )
 
-mokepones.push(hipodoge,capipepo,ratigueya)
+ardiguella.ataque.push(
+    {nombre: '📄', id: 'boton-papel'},
+    {nombre: '📄', id: 'boton-papel'},
+    {nombre: '📄', id: 'boton-papel'},
+    {nombre: '📄', id: 'boton-papel'},
+)
+
+mokepones.push(hipodoge,capipepo,ratigueya,ardiguella)
 
 function iniciarJuego() {
     
@@ -97,7 +107,8 @@ function iniciarJuego() {
 
     inputHipodoge = document.getElementById('Hipodoge')
     inputCapipepo = document.getElementById('Capipepo')
-    inputRatigueya = document.getElementById('Ratigueya')    
+    inputRatigueya = document.getElementById('Ratigueya') 
+    inputArdiguella = document.getElementById('Ardiguella')   
 
     })
 
@@ -126,6 +137,9 @@ function seleccionarMascotaJugador() {
     } else if(inputRatigueya.checked){
         spanMascotaJugador.innerHTML = inputRatigueya.id
         mascotaJugador = inputRatigueya.id
+    } else if(inputArdiguella){
+        spanMascotaJugador.innerHTML = inputArdiguella.id
+        mascotaJugador = inputArdiguella.id        
     } else {
         alert ('Debes Seleccionar una Mascota')
     }
@@ -167,10 +181,12 @@ function secuenciaAtaque() {
                 ataqueJugador.push('FUEGO')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else if (e.target.textContent === '💧') {
                 ataqueJugador.push('AGUA')
                 console.log(ataqueJugador)
                 boton.style.background = '#112f58'
+                boton.disabled = true
             } else {
                 ataqueJugador.push('TIERRA')
                 console.log(ataqueJugador)
@@ -235,22 +251,20 @@ function indexAmbosOponentes(jugador, enemigo) {
 function combate() {
 
     for (let index = 0; index < ataqueJugador.length; index++) {
-        if(ataqueJugador.length === ataqueEnemigo[index]) {
+        if(ataqueJugador[index] === ataqueEnemigo[index]) {
             indexAmbosOponentes(index, index)
-            crearMensaje("EMPATE")
-            victoriasJugador++
-            spanVidasJugador.innerHTML = victoriasJugador
-        } else if (ataqueJugador.length === 'FUEGO' && ataqueEnemigo[index] === 'TIERRA') {
+            crearMensaje("EMPATE")            
+        } else if (ataqueJugador[index] === 'FUEGO' && ataqueEnemigo[index] === 'TIERRA') {
             indexAmbosOponentes(index, index)
             crearMensaje("GANASTE")
             victoriasJugador++
             spanVidasJugador.innerHTML = victoriasJugador
-        } else if (ataqueJugador.length === 'AGUA' && ataqueEnemigo[index] === 'FUEGO') {
+        } else if (ataqueJugador[index] === 'AGUA' && ataqueEnemigo[index] === 'FUEGO') {
             indexAmbosOponentes(index, index)
             crearMensaje("GANASTE")
             victoriasJugador++
             spanVidasJugador.innerHTML = victoriasJugador
-        } else if (ataqueJugador.length === 'TIERRA' && ataqueEnemigo[index] === 'AGUA') {
+        } else if (ataqueJugador[index] === 'TIERRA' && ataqueEnemigo[index] === 'AGUA') {
             indexAmbosOponentes(index, index)
             crearMensaje("GANASTE")
             victoriasJugador++
@@ -319,11 +333,8 @@ function crearMensaje(resultado) {
 function crearMensajeFinal(resultadoFinal) {
   
     sectionReiniciar.style.display = 'block'    
-    sectionMensajes.innerHTML = resultadoFinal
-    
-    botonFuego.disabled = true    
-    botonAgua.disabled = true    
-    botonTierra.disabled = true
+    sectionMensajes.innerHTML = resultadoFinal    
+   
 }
 
  function reiniciarJuego() {
